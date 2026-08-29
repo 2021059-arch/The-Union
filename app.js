@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // KGB Beria Propaganda Ads
+    // KGB & Soviet Bureaucracy Black Comedy Ads
     const kgbAds = [
-        "[KGB 직통 신고 안내] 이웃의 생각에서 불순물이 느껴집니까? 즉시 베리야 동지에게 연락하세요. (회선: 00-BLOOD)",
-        "[KGB 공익 공고] 당은 당신의 마술적 재능을 원합니다. 벽을 투시할 수 있다면 제9초능력사단으로 자진 입대하십시오.",
-        "[국가보위부] 위치크래프트 13국은 궤도 위성망을 통해 당신의 오늘 밤 꿈을 감시합니다. 평온한 수면 되십시오.",
-        "[베리야 동지의 훈시] 숨길 수 있는 비밀은 오직 태어나지 않은 자의 머릿속에만 존재한다. 신고는 의무입니다.",
-        "[연방 식량 배급처] 금일 배급된 영양 블록에서 기하학적 문양이 꿈틀거린다면 즉시 소각하고 기도하십시오."
+        "[KGB 긴급 공익광고] 이웃집 할머니가 이상하다면 지체 없이 베리야 동지에게 연락하세요! (직통 핫라인: 00-BERIA-KGB)",
+        "[위치크래프트 13국 알림] 숟가락을 노려보았을 때 숟가락 대신 벽시계가 울부짖는다면 즉시 지원 서류를 제출하십시오.",
+        "[당 중앙 인사위원회 공고] 베리야 동지의 제47차 정기 휴가 청구서는 '조국 건설에 쉴 틈은 없다'는 사유로 만장일치 반려되었습니다.",
+        "[항공우주군 선전] 우리 연방의 로켓 엔진은 너무나 완벽하여, 중력조차 당의 방침에 굴복하여 물러났습니다.",
+        "[연방 식량배급총국] 금일 배급된 통조림에서 짐승의 울음소리가 난다면 그것은 프레오브라젠스키 인간화 공정의 사소한 부산물이니 안심하고 섭취하십시오.",
+        "[KGB 직통 신고센터] '휴식을 취하고 싶다'는 생각은 부르주아적 나태입니다. 당신의 뇌파가 느려지면 베리야 동지가 찾아갑니다."
     ];
 
     const bannerText = document.querySelector('.kgb-banner-text');
@@ -16,12 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % kgbAds.length;
             
-            // Glitch effect during transition
             bannerText.style.opacity = 0;
             setTimeout(() => {
                 bannerText.textContent = kgbAds[currentIndex];
                 bannerText.style.opacity = 1;
-            }, 100);
-        }, 6000); // Change every 6 seconds
+            }, 150);
+        }, 5000);
     }
 });

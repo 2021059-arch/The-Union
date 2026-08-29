@@ -3,8 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[기밀] 위치크래프트 13국 - 유니온</title>
+    <title>위치크래프트 13국 특수지원청 - 연방 내부 전산망</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-family: 'Russo One', sans-serif;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .form-control, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: #040508;
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-control:focus, select:focus, textarea:focus {
+            border-color: var(--soviet-red);
+            box-shadow: 0 0 10px rgba(255, 30, 66, 0.2);
+        }
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .radio-card {
+            background: #090b10;
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .radio-card:hover {
+            border-color: var(--soviet-red);
+        }
+        .radio-card input {
+            margin-right: 8px;
+        }
+        .submit-btn {
+            background: var(--soviet-red);
+            color: #ffffff;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.05rem;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            width: 100%;
+            letter-spacing: 0.05em;
+        }
+        .submit-btn:hover {
+            background: #e01234;
+            transform: translateY(-1px);
+        }
+        .example-badge {
+            display: inline-block;
+            background: rgba(255, 30, 66, 0.15);
+            border: 1px solid rgba(255, 30, 66, 0.3);
+            color: #ff8a9a;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            margin-bottom: 6px;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+        .example-badge:hover {
+            background: rgba(255, 30, 66, 0.3);
+        }
+    </style>
 </head>
 <body>
     <div class="crt-overlay"></div>
@@ -12,75 +92,116 @@
         <div class="logo">연방국가전산망<br><span>내부 전산망</span></div>
         <ul>
             <li><a href="index.html">포털 넥서스</a></li>
-            <li><a href="kgb_report.html">KGB 24시 신고센터</a></li>
-            <li><a href="psychic.html">특수초능력자 모집</a></li>
-            <li><a href="witchcraft.html">위치크래프트국(마술)</a></li>
-            <li><a href="satellite.html">전지구 감시 위성망</a></li>
+            <li><a href="aerospace.html">항공우주군 사령부</a></li>
             <li><a href="weapons.html">붉은 군대 병기창</a></li>
             <li><a href="technology.html">초과진화 기술력 선전</a></li>
+            <li><a href="kgb_report.html">KGB 24시 신고센터</a></li>
+            <li><a href="witchcraft.html">위치크래프트국(특수과)</a></li>
+            <li><a href="party.html">당 중앙 간부 보고서</a></li>
             <li><a href="propaganda.html">사상 선전 및 강령</a></li>
             <li><a href="life.html">인민 생활 배급망</a></li>
             <li><a href="classified.html">제13구역 파동연구소</a></li>
         </ul>
     </nav>
     <main class="content">
-        <div class="kgb-banner">
-            <h1>위치크래프트 13국: 마술적 리얼리즘과 무산계급의 승리</h1>
-            <p>보안 등급: 1급 흑색 기밀 | 열람자: 인민위원장 직속 승인자</p>
-        </div>
-
-        <section class="card">
-            <h2 class="card-title">마술은 미신이 아닌, 프로레타리아의 첨단 과학이다</h2>
-            <p>과거 부르주아 계급과 귀족들이 독점하며 쾌락과 억압의 도구로 사용했던 이른바 '마술'은, 이제 위대한 유니온의 인민들에 의해 통제되고 분석되는 객관적 과학의 영역으로 편입되었다. 위치크래프트 13국은 비물리적 현상과 차원 간의 틈새를 활용하여, 제국주의 전쟁 기계들을 분쇄하기 위한 실용적이고도 파괴적인 주술 공학을 연구한다.</p>
-            <p>우리는 고대 슬라브의 주술과 현대 양자역학을 융합하여 '피의 연금술'을 완성했다. 이것은 더 이상 종교적 기만이 아니다. 현실의 물리 법칙을 강제로 재작성하는 폭력적이고도 철저한 과학이다.</p>
-        </section>
+        <h1>위치크래프트 13국 인재선발처</h1>
+        <p>세 나라가 다 초상학을 연구하지만, 그것을 편제표에 올려 예산과 보급과 훈장을 배정한 것은 오직 연방뿐입니다. 연방은 이것을 미신으로 다루지 않습니다. <strong>재현되고, 측정되고, 통계가 나오면 그것은 병과입니다.</strong></p>
+        <p>자신에게 기이한 현상이나 설명할 수 없는 능력이 발현되었습니까? 숨기지 마십시오. 국가를 위해 자신의 신경계와 영혼을 데이터 표의 한 칸으로 바칠 영광스러운 기회입니다.</p>
 
         <div class="cli-block">
-            [경고] 제2연구동 반물질 헥스(Hex) 누출 발생
-            - 영향 반경: 2.5km
-            - 증상: 해당 구역 내 유기체들의 혈액 역류 및 유전자 구조 무작위 재조합
-            - 대응: 정화 부대 투입 완료. 생존자 전원 소각 처리 중.
+            > WITCHCRAFT_BUREAU_13 // RECRUITMENT TERMINAL ACTIVE<br>
+            > "초상현상은 기적이 아니다. 규격화되지 않은 노동력일 뿐이다."<br>
+            > 알림: 허위 기재 시 뇌파 역추적을 통해 시베리아 궤도 발사대 노역장으로 직행합니다.
         </div>
 
         <section class="card">
-            <h2 class="card-title">주요 연구 프로젝트 개요</h2>
+            <h2>제13국 3대 특수지원 전형 등록서</h2>
+            <form onsubmit="event.preventDefault(); alert('접수 완료: 인근 KGB 요원이 3분 내로 귀하의 문을 두드릴 것입니다. 움직이지 마십시오.');">
+                
+                <div class="form-group">
+                    <label>1. 인민등록번호 및 소속 집단농장/공장</label>
+                    <input type="text" class="form-control" placeholder="예: UN-8849-0128 (제4중기계화 트랙터 공장)" required>
+                </div>
+
+                <div class="form-group">
+                    <label>2. 지원 전형 선택 (택1 필수)</label>
+                    <div class="radio-group">
+                        <label class="radio-card">
+                            <input type="radio" name="track" value="magic" checked>
+                            <strong>전형 A: 마법 사용자</strong>
+                            <p style="font-size:0.85rem; color:var(--text-sub); margin-top:4px;">악기상 소환, 역병 제어, 예언, 사흘 뒤 전선 배치 적중, 저주 및 약제학</p>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="track" value="paraphysics">
+                            <strong>전형 B: 초상물리학 사용자</strong>
+                            <p style="font-size:0.85rem; color:var(--text-sub); margin-top:4px;">염력 포탄 편향, 천리안, 원격 뇌파 간섭, 공간 텔레포트, 열역학 역전</p>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="track" value="eccentric">
+                            <strong>전형 C: 기타 기인 (불명)</strong>
+                            <p style="font-size:0.85rem; color:var(--text-sub); margin-top:4px;">분류 불가능한 해괴한 현상, 체질적 특이점, 원인불명 사물 간섭</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. 상세 능력 및 기이 현상 기술</label>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:8px;">자주 접수되는 기괴한 사례 예시 (클릭 시 자동 입력):</p>
+                    <div>
+                        <span class="example-badge" onclick="document.getElementById('desc').value = '스푼을 노려보면 스푼 대신 뒷좌석 동지의 척추가 정확히 15도 휩니다.';">[예시 1] 척추 편향</span>
+                        <span class="example-badge" onclick="document.getElementById('desc').value = '재채기를 할 때마다 옆집 라디오에서 연방 국가가 4배속 역재생으로 흘러나옵니다.';">[예시 2] 라디오 역재생</span>
+                        <span class="example-badge" onclick="document.getElementById('desc').value = '꿈에서 맑스 동지와 체스를 둘 때마다 상대방의 폰 하나를 물리적 주머니로 훔쳐올 수 있습니다.';">[예시 3] 물질 견인 체스</span>
+                        <span class="example-badge" onclick="document.getElementById('desc').value = '화가 나면 주변 반경 5m 안의 모든 보드카가 영하 40도인데도 끓어오르기 시작합니다.';">[예시 4] 알코올 비등 현상</span>
+                        <span class="example-badge" onclick="document.getElementById('desc').value = '이웃집 개와 눈을 마주치면 개가 프롤레타리아 노동 강령을 유창한 노어로 암송합니다.';">[예시 5] 강령 낭독견</span>
+                    </div>
+                    <textarea id="desc" rows="4" class="form-control" placeholder="당신이 일으키는 현상을 기탄없이 적으십시오. 국가 통계청이 계측해 드립니다." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>4. 능력 발현 시 발생하는 대가 및 부작용</label>
+                    <input type="text" class="form-control" placeholder="예: 시전 후 48시간 동안 모음 'ㅏ' 발음 불가, 손톱이 구리로 변함 등">
+                </div>
+
+                <button type="submit" class="submit-btn">국가 초상병과 등록원서 제출 (취소 불가)</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>위치크래프트 13국 정규 편제 현황</h2>
             <table class="spec-table">
                 <thead>
                     <tr>
-                        <th>프로젝트 명</th>
-                        <th>동력원</th>
-                        <th>전술적 목표</th>
-                        <th>부작용/위험도</th>
+                        <th>병과 제식명</th>
+                        <th>주요 수행 임무</th>
+                        <th>참모본부 규격 지침</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>붉은 서리 (Red Frost)</td>
-                        <td>정치범 500명의 생명력 추출 (월간)</td>
-                        <td>반경 50km 내의 기상 조작, 극저온 마나 폭풍 생성</td>
-                        <td>시전자들의 신체가 얼음 결정으로 치환됨</td>
+                        <td><strong>{p}식 기상관측대대</strong></td>
+                        <td>악기상 소환(반나절 내 비구름 형성), 적진 역병 투발, 사흘 뒤 전선 위치 예언</td>
+                        <td>정찰기보다 적중률이 높아 정찰 예산 40% 삭감 조치 완료</td>
                     </tr>
                     <tr>
-                        <td>인민의 방패 (People's Aegis)</td>
-                        <td>지원자들의 고통 에너지 결속 네트워크</td>
-                        <td>적의 포탄과 폭격기를 반사하는 물리-주술 복합 방어막</td>
-                        <td>방어막 붕괴 시 네트워크 연결자들의 뇌출혈 동반 즉사</td>
+                        <td><strong>{p}식 특별통제대대</strong></td>
+                        <td>기후 장기 고정(국지적 계절 변경), 적 부대 원격 조종, 천리안 지도 편찬</td>
+                        <td>산 제물 명단은 후방 형벌부대 배당 인원에서 차감</td>
                     </tr>
                     <tr>
-                        <td>강령 보병 (Necro-Soldier)</td>
-                        <td>전사자 유해 및 합성 신경액</td>
-                        <td>자아 없이 명령에만 복종하는 무한 동력 보병 양성</td>
-                        <td>가끔 생전의 기억이 재생되어 통제 시스템 오류 유발</td>
+                        <td><strong>{p}식 특수감응연대</strong></td>
+                        <td>무원인 심정지 유발, 필름 염사, 순간이동(부대 단위 전술 도약)</td>
+                        <td>원격 감응으로 아군 전사자 공포를 적에게 투사 (자원의 이중 사용)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>{p}차 부마자군</strong></td>
+                        <td>훼손 시신 및 장비 합성 불사병기, 진격 저지 불가 돌파</td>
+                        <td>회수 절차 없음. 파괴될 때까지 적진으로 계속 보행 조치</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="card">
-            <h2 class="card-title warning-text">운영 수칙 4조: 제물의 합리적 조달</h2>
-            <p>위치크래프트 13국의 모든 마술적 연성은 막대한 양의 생체 에너지와 혈액을 요구한다. 이를 위해 당은 반동분자, 사상 불순자, 그리고 적국의 전쟁 포로를 '가용 자원'으로 분류한다. 이들은 실험실의 제단에서 가장 효율적인 방식으로 분해되어 국가의 에너지 그리드로 환원된다. 인민의 적을 조국의 힘으로 변환하는 이 과정은 궁극의 재활용이며, 프롤레타리아트의 복수이다.</p>
-            <p class="glitch">매일 밤 수용소에서 들려오는 비명소리가 기계음처럼 들리기 시작했다. 피비린내가 환풍구를 타고...</p>
-        </section>
+        <div class="kgb-banner"><span class="kgb-banner-text">Loading...</span></div>
     </main>
     <script src="app.js"></script>
 </body>
