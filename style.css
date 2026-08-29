@@ -1,10 +1,16 @@
-/* 소비에트 연방 브루탈리즘 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* 소비에트 브루탈리즘 & 키릴 문자풍 고시인성 스타일 */
 :root {
-    --bg-color: #050000;
-    --text-color: #d3d3d3;
-    --accent-red: #a30000;
-    --border-color: #4a0000;
-    --terminal-green: #00ff00;
+    --bg-color: #070709;
+    --card-bg: #111116;
+    --text-color: #f0f0f5;
+    --text-muted: #a5a5b5;
+    --accent-red: #ff2222;
+    --dark-red: #8b0000;
+    --border-color: #551111;
+    --border-bright: #aa2222;
+    --terminal-green: #33ff33;
 }
 
 * {
@@ -16,51 +22,60 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: "Courier New", Courier, monospace;
-    line-height: 1.6;
+    font-family: 'Noto Sans KR', 'JetBrains Mono', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
     display: flex;
     min-height: 100vh;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
 }
 
-/* 낡은 CRT 모니터 효과 */
+/* CRT 효과: 가시성을 저해하지 않도록 은은하게 조정 */
 .crt-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 2px, 3px 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 3px, 4px 100%;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.25;
 }
 
+/* 사이드바 */
 nav.sidebar {
-    width: 280px;
-    background-color: #0a0000;
-    border-right: 3px solid var(--border-color);
-    padding: 20px 0;
+    width: 300px;
+    min-width: 300px;
+    background-color: #0d0d12;
+    border-right: 2px solid var(--border-bright);
+    padding: 25px 0;
     display: flex;
     flex-direction: column;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--accent-red);
+    font-family: 'Russo One', 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 0px #000;
-    border-bottom: 2px dashed var(--border-color);
-    padding-bottom: 10px;
-    line-height: 1.2;
+    margin-bottom: 25px;
+    padding: 0 15px 15px 15px;
+    border-bottom: 2px solid var(--border-color);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .logo span {
-    font-size: 1rem;
-    color: #888;
+    font-size: 0.95rem;
+    color: var(--accent-red);
+    display: block;
+    margin-top: 6px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
 }
 
 nav.sidebar ul {
@@ -68,111 +83,163 @@ nav.sidebar ul {
 }
 
 nav.sidebar ul li {
-    border-bottom: 1px solid #220000;
+    border-bottom: 1px solid #1f1f28;
 }
 
 nav.sidebar ul li a {
     display: block;
-    padding: 15px 20px;
-    color: #aaa;
+    padding: 14px 22px;
+    color: var(--text-muted);
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.2s;
+    font-size: 1.02rem;
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
 }
 
 nav.sidebar ul li a:hover {
-    background-color: var(--accent-red);
-    color: #fff;
-    padding-left: 25px;
+    background-color: var(--dark-red);
+    color: #ffffff;
+    padding-left: 28px;
+    border-left: 4px solid var(--accent-red);
 }
 
-main {
+/* 메인 본문 */
+main, main.content {
     flex: 1;
-    padding: 40px;
+    padding: 40px 50px;
     max-width: 1200px;
 }
 
-h1, h2, h3 {
-    color: var(--accent-red);
+h1, h2, h3, .card-title {
+    font-family: 'Russo One', 'Noto Sans KR', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.8rem; margin-top: 40px; }
+h1 {
+    font-size: 2.2rem;
+    color: var(--accent-red);
+    border-bottom: 2px solid var(--accent-red);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    border-left: 5px solid var(--accent-red);
+    padding-left: 12px;
+}
 
 p {
-    margin-bottom: 15px;
-    text-align: justify;
+    margin-bottom: 16px;
+    color: var(--text-color);
+    font-size: 1.05rem;
+    word-break: keep-all;
 }
 
-/* 터미널 출력 느낌의 블록 */
+/* 카드/섹션 */
+.card, section {
+    background-color: var(--card-bg);
+    border: 1px solid #2a2a35;
+    border-left: 3px solid var(--dark-red);
+    padding: 24px;
+    margin-bottom: 25px;
+}
+
+/* 터미널 CLI 블록 */
 .cli-block {
-    background-color: #000;
-    border: 1px solid var(--border-color);
+    background-color: #030305;
+    border: 1px solid var(--border-bright);
     padding: 20px;
-    margin: 20px 0;
-    font-family: monospace;
-    color: #888;
+    margin: 25px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    color: #b0e0b0;
+    line-height: 1.65;
     position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 .cli-block::before {
-    content: "GOSNET_SECURE_TERMINAL //";
+    content: "[ СИСТЕМА // 내부 전산망 보안 터미널 ]";
     display: block;
     color: var(--accent-red);
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-family: 'Russo One', monospace;
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
 }
 
-/* 표 스타일 (관료제) */
+/* 데이터 표 */
 .spec-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 30px 0;
+    margin: 25px 0;
+    background-color: var(--card-bg);
 }
 
 .spec-table th, .spec-table td {
-    border: 1px solid var(--border-color);
-    padding: 12px;
+    border: 1px solid #333342;
+    padding: 14px 16px;
+    font-size: 1rem;
     text-align: left;
 }
 
 .spec-table th {
-    background-color: #1a0000;
-    color: var(--accent-red);
-    font-weight: bold;
+    background-color: #1a0808;
+    color: #ffffff;
+    font-family: 'Russo One', 'Noto Sans KR', sans-serif;
+    border-bottom: 2px solid var(--accent-red);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
 }
 
 .spec-table td {
-    background-color: #0a0000;
+    color: #e5e5ea;
 }
 
-/* 베리야 KGB 광고 배너 */
+.spec-table tbody tr:hover {
+    background-color: #1a1a24;
+}
+
+/* 베리야 KGB 배너 */
 .kgb-banner {
-    margin-top: 50px;
+    margin-top: 40px;
     border: 2px solid var(--accent-red);
-    background-color: #1a0000;
-    padding: 15px;
+    background-color: #180505;
+    padding: 18px 24px;
     text-align: center;
-    font-weight: bold;
-    color: #fff;
-    animation: blink 2s infinite;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 34, 34, 0.2);
 }
 
 .kgb-banner-text {
-    font-size: 1.2rem;
+    font-family: 'Russo One', 'Noto Sans KR', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    color: #ffffff;
 }
 
-@keyframes blink {
-    0%, 100% { border-color: var(--accent-red); }
-    50% { border-color: transparent; }
+.kgb-banner p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 5px;
+    margin-bottom: 0;
 }
 
-/* 주의 문구 / 강조 */
-.red-text {
+/* 강조 텍스트 */
+.red-text, .warning-text {
     color: var(--accent-red);
-    font-weight: bold;
+    font-weight: 700;
+}
+
+.glitch {
+    color: #888899;
+    font-style: italic;
+    font-size: 0.95rem;
 }
